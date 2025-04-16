@@ -50,15 +50,19 @@ function Main({ dishes }) {
 }
 
 function App() {
-  const [status, setStatus] = useState("Open");
+  // set status inital state is true
+  const [status, setStatus] = useState(true);
 
   return (
+    // status check means if status is true set to open otherwise set to closed.
+    // button status updated to do !status (opposit of current status) 
+    // status ? close : open means --> if status is currently open button says close rest otherwise it says open rest 
     <div>
-      <h1>The restaurant is currently {status}.</h1>
-      <button onClick={() => setStatus("Closed")}>
-        Close Restaurant
+      <h1>The restaurant is currently {status ? "open" : "closed"}.</h1>
+      <button onClick={() => setStatus(!status)}>
+        {status ? "Close" : "Open"} Restaurant
       </button>
-      <Header name="Alex" year={new Date().getFullYear()} />
+      <Header name="Sammi" year={new Date().getFullYear()} />
       <Main dishes={dishObjects} />
     </div>
   );
