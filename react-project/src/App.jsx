@@ -1,4 +1,4 @@
-import { useState, useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import "./App.css";
 import chef from "./images/chef.jpg";
 
@@ -61,6 +61,11 @@ function App() {
     (status) => !status,
     true
   );
+
+  useEffect(() => {
+    console.log(`The restaurant is ${status ? "open" : "closed"}.`);
+  }, [status]);
+
   return (
     <div>
       <h1>
@@ -70,7 +75,7 @@ function App() {
       <button onClick={toggle}>
         {status ? "Close" : "Open"} Restaurant
       </button>
-      <Header name="Alex" year={new Date().getFullYear()} />
+      <Header name="Sammi" year={new Date().getFullYear()} />
       <Main
         dishes={dishObjects}
         openStatus={status}
