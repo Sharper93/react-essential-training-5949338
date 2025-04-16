@@ -11,7 +11,8 @@ function Header({ name, year }) {
 const items = [
   "Macaroni and Cheese",
   "Salmon with Potatoes",
-  "Tofu with Vegetables"
+  "Tofu with Vegetables",
+  "Side Salad"
 ];
 
 function Main({ dishes }) {
