@@ -51,7 +51,7 @@ function Main({ dishes }) {
 function App() {
   return (
     <div>
-      <Header name="Alex" year={new Date().getFullYear()} />
+      <Header name="Sammi" year={new Date().getFullYear()} />
       <Main dishes={dishObjects} />
     </div>
   );
