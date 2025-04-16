@@ -12,7 +12,7 @@ function Header({ name, year }) {
 function App() {
   return (
     <div>
-      <Header name="Alex" year={new Date().getFullYear()} />
+      <Header name="Sammi" year={new Date().getFullYear()} />
       <main>
         <h2>We serve the most delicious food around</h2>
       </main>
