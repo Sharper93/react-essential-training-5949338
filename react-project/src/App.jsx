@@ -9,13 +9,22 @@ function Header({ name, year }) {
   );
 }
 
+// main component for main tag in app
+function Main() {
+  return (
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+  );
+}
+
 function App() {
   return (
     <div>
       <Header name="Sammi" year={new Date().getFullYear()} />
-      <main>
-        <h2>We serve the most delicious food around</h2>
-      </main>
+      <Main />
     </div>
   );
 }
