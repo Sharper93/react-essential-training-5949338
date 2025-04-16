@@ -9,22 +9,28 @@ function Header({ name, year }) {
   );
 }
 
+const items = [
+  "Macaroni and Cheese",
+  "Bacon Cheeseburger and Curly Fries",
+  "Veggie Burger and Celery Sticks"
+];
+
 // main component for main tag in app
-function Main() {
-  return (
-    <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
+function Main({ dishes }) {
+  // jsx expression for list to display
+  return <ul>
+      {dishes.map((dish) => (
+        <li style={{ listStyleType: "none"}}>{dish}</li>
+      ))}
     </ul>
-  );
+
 }
 
 function App() {
   return (
     <div>
       <Header name="Sammi" year={new Date().getFullYear()} />
-      <Main />
+      <Main dishes={items}/>
     </div>
   );
 }
