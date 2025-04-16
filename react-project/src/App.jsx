@@ -8,18 +8,30 @@ function Header({ name, year }) {
     </header>
   );
 }
+
 const items = [
   "Macaroni and Cheese",
   "Salmon with Potatoes",
   "Tofu with Vegetables",
-  "Side Salad"
+  "Side Salad",
+  "Loaded Baked Potato"
 ];
+
+// create data before item is rendered
+const dishObjects = items.map((dish, i) => ({
+  id: i,
+  title: dish
+}))
+
 
 function Main({ dishes }) {
   return (
+    // list to dynamically populate data 
     <ul>
       {dishes.map((dish) => (
-        <li style={{ listStyleType: "none" }}>{dish}</li>
+        <li key={dish.id} style={{ listStyleType: "none" }}>
+          {dish.title}
+          </li>
       ))}
     </ul>
   );
@@ -28,8 +40,8 @@ function Main({ dishes }) {
 function App() {
   return (
     <div>
-      <Header name="Alex" year={new Date().getFullYear()} />
-      <Main dishes={items} />
+      <Header name="Sammi" year={new Date().getFullYear()} />
+      <Main dishes={dishObjects} />
     </div>
   );
 }
